@@ -1,0 +1,106 @@
+# Snippets
+
+## Converting npm code to normal code
+
+Just follow the error messages!
+
+A great place to find CDN-served js files is cdnjs.org
+
+I'll give you this one, the wrapper you use to keep your margins/etc from conflicting with each other:
+
+    (function() {
+      ....code goes here.....
+    })()
+ 
+## use vs attributes
+
+To reproduce amarker or symbol, use <use> with an href + the id of what you want
+
+    <use href="#whatever">
+
+To fill something in, use url() with the id of what you want
+
+    <rect fill="url(#whatever)"
+
+## defs
+
+  markers and gradients go inside of defs, symbols do not
+
+    <defs>
+      <marker>...</marker>
+      <linearGradient>...</linearGradient>
+    </defs>
+    <symbol>...</symbol>  
+
+## Arrowhead
+
+Basic look:
+
+    <path d="M0,0 L0,6 L9,3 z" fill="#f00" />
+
+As a marker:
+
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#f00" />
+    </marker>
+
+## Gradient
+
+    <linearGradient id="gradient">
+        <stop offset="5%"  stop-color="green"/>
+        <stop offset="95%" stop-color="gold"/>
+    </linearGradient>
+
+## Illustrator
+
+How to create symbols
+
+1. Window > Symbols
+2. Draw something (or download from flaticons)
+3. Select it
+4. Click the New Symbol button (on Symbols panel, like a piece of paper with a corner folded over)
+5. Keep defaults, just change the name (no spaces!)
+6. Don't delete the original
+
+Then you can use:
+
+    external.svg#whatever
+
+# What we're doing
+
+## Getting started
+
+1) Convert npm code to normal code
+
+## Basics
+
+1) Have the radioactive thing
+2) <use> it to make more, move them around
+3) Turn it into a <symbol>
+4) Have a triangle for an arrowhead, move into <defs>
+5) Marker-end
+6) Make some gradients
+
+## Flights
+
+1) Make it work without npm
+2) Remove the circles
+3) Add a manual defs/symbol
+4) Add marker-end
+5) Add marker-mid
+
+## Powerplants
+
+1) Make it work without npm
+2) Use #radioactive from the current page
+3) Use #nuclear from an external SVG
+4) Add some more icons
+5) Color them appropriately
+
+# Links
+
+https://theblog.adobe.com/speed-vector-drawings-illustrator/
+https://www.sarasoueidan.com/blog/structuring-grouping-referencing-in-svg/
+https://css-tricks.com/svg-symbol-good-choice-icons/
+https://vanseodesign.com/web-design/svg-definition-reuse/
+https://css-tricks.com/svg-use-external-source/
